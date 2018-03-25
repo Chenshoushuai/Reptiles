@@ -1,5 +1,5 @@
 # -*- coding:UTF-8 -*-
-#multi_detect.py
+#multi_detect.py，是运行代码，实现音谱图的识别，语音的切分！  python3 ./multi_detect.py
 
 from __future__ import print_function
 #__future__ 至少确保在2.1之前版本的Python可以正常运行一些新的语言特性
