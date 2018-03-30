@@ -22,4 +22,4 @@ for i in range(1,101):
 			S=int(((seg_point[j+1]/60)-M)*60)
 			cmd="ffmpeg -i "+"Obama"+str(i)+".wav"+" -ss 00:"+str(mm)+":"+str(ss)+" -to 00:"+str(M)+":"+str(S)+" -y ../wav/Obama"+str(i)+"_"+str(j)+".wav"
 			rs= sh.run(cmd)
-#multi_segmentation("Obama1.wav",sr=16000,frame_size=256,frame_shift=128,plot_seg=True)
+#multi_segmentation("Obama1.wav",sr=16000,frame_size=256,frame_shift=128,plot_seg=True) 
