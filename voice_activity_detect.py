@@ -1,9 +1,12 @@
-# voice_activity_detect.py
+#-*- coding: UTF-8 -*-   
 from __future__ import print_function
 import numpy as np
 import scipy.signal as signal
 import matplotlib.pyplot as plt
 
+#为了解决非法分割点的问题，实验引入VAD来筛选分割点：
+#根据Multi segmentation处理结束的分割点进行语音分段
+#对每段语音进行VAD检测，若VAD检测有语音端点，则不做处理；若VAD检测无语音端点，则剔除该分割点
 def vad(x,framelen = None, sr = None, frameshift = None, plot = False):
     if sr is None:
         sr = 16000
@@ -71,7 +74,7 @@ def vad(x,framelen = None, sr = None, frameshift = None, plot = False):
                     x2.append(x1[t] + count - 1)
                     t = t + 1
 
-    if plot:
+    '''if plot:
         plt.figure('speech endpoint detect')
         plt.plot(np.arange(0,len(x))/(float)(sr),x, "b-")
         len_endpoint = min(len(x1), len(x2))
@@ -81,7 +84,7 @@ def vad(x,framelen = None, sr = None, frameshift = None, plot = False):
         plt.xlabel("Time/s")
         plt.ylabel("Normalized Amp")
         plt.grid(True)
-        plt.show()
+        plt.show()'''
     return x1,x2
 
 
