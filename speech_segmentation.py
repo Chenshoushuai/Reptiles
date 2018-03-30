@@ -107,4 +107,4 @@ def multi_segmentation(file,sr,frame_size,frame_shift,plot_seg = False): #plot_s
         plt.ylabel("Speech Amp")
         plt.grid(True)
         plt.show()'''
-    return (np.asarray(output_segpoint) / float(sr)),rangeLoop
+    return (np.asarray(output_segpoint) / float(sr)),rangeLoop 
